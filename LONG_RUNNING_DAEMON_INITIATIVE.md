@@ -46,10 +46,17 @@ Work → Die         Process
 ## Systems to Convert
 
 - [x] **Priority 1: Polling Reporter** — Spawn per check → Long-running with schedule
-- [ ] **Priority 2: Background Indexer** — Batched spawn → One long-running Franklin
-- [ ] **Priority 3: Consciousness Layers** — 8 separate spawns → 1 orchestrator daemon
+- [x] **Priority 2: Background Indexer** — Batched spawn → One long-running Franklin
+- [x] **Priority 3: Consciousness Layers** — **SUPERSEDED** by MemoryJudge (simpler, works)
 - [ ] **Priority 4: Heartbeat Checks** — Spawn per check → Long-running with timer
 - [ ] **Priority 5: Rate Limit Manager** — Already daemon? → Verify/optimize if needed
+
+### Superseded Systems
+
+| Old System | Replacement | Reason |
+|------------|-------------|--------|
+| 8-Layer Consciousness Architecture | MemoryJudge | Simpler, captures same value (decisions, feelings, philosophy) without complexity |
+| Per-batch Franklin spawning | Long-running daemons | 300 spawns/day → 1 spawn total |
 
 ### Phase 2: Background Indexer Conversion
 

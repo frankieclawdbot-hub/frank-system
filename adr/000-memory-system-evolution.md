@@ -295,15 +295,17 @@ memory_search (semantic retrieval)
 | ADR-002 | 2026-02-02 | Continuous Vector Indexing |
 | ADR-003 | 2026-02-02 | Sleep Protocol Architecture |
 | ADR-006 | 2026-02-03 | Franklin Architecture |
-| ADR-008 | 2026-02-03 | Consciousness-Aligned Architecture (disabled) |
+| ADR-008 | 2026-02-03 | Consciousness-Aligned Architecture (**superseded** by MemoryJudge) |
 | ADR-023 | 2026-02-05 | Simplified Continuity-First Memory |
 | ADR-023-Update | 2026-02-05 | Long-Running Franklin Daemon |
 
 **Implementation Files:**
-- `background-indexer-v2.sh` — Orchestration
-- `memory-judge-franklin.sh` — AI judgment daemon
+- `background-indexer-v2.sh` — Orchestration (long-running daemon)
+- `memory-judge-franklin.sh` — AI judgment daemon (ONE spawn total)
+- `polling-reporter-daemon.sh` — Status monitoring (zero spawns)
 - `memory-embed.py` — Vector generation
 - `memory-search.sh` — Semantic retrieval
+- `LONG_RUNNING_DAEMON_INITIATIVE.md` — Optimization tracking
 
 ---
 
@@ -313,7 +315,13 @@ The memory system evolved from **episodic → indexed → intelligent**. Each ph
 
 **Key insight:** True continuity requires not just storage and indexing, but **intelligent judgment** about what deserves to persist. The system now has that.
 
+**Cleanup Note (2026-02-05):**
+- 8-layer consciousness architecture (ADR-008) superseded by simpler MemoryJudge
+- Removed duplicate MemoryJudge daemon
+- Consolidated all inbox processing to single daemon
+- Spawn reduction: ~300/day → 1 total
+
 ---
 
-*Last Updated: 2026-02-05 17:59 UTC — Added Calibration & Tuning section (hybrid thresholds, sentiment/acknowledgment capture)*  
+*Last Updated: 2026-02-05 19:19 UTC — Cleanup complete, consciousness architecture superseded*  
 *Next Review: When Phase 6 begins or operational issues arise*
