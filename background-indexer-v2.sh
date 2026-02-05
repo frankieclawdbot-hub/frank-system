@@ -73,7 +73,7 @@ extract_messages() {
 queue_for_judgment() {
     local chunk_file="$1"
     local chunk_name=$(basename "$chunk_file")
-    local inbox="/tmp/indexer-inbox"
+    local inbox="/tmp/memory-inbox"
     
     mkdir -p "$inbox"
     

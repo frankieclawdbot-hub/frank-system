@@ -58,7 +58,7 @@ Work → Die         Process
 
 **Phase 2 Tasks:**
 
-- [x] Create `memory-judge-indexer.sh` (long-running Franklin daemon)
+- [x] Use existing `memory-judge-franklin.sh` (already running)
 - [x] Modify `background-indexer-v2.sh` to write chunks to queue (no spawn)
 - [x] Implement file-based IPC between indexer and judge
 - [x] Test end-to-end: chunk → queue → judgment → embedding
