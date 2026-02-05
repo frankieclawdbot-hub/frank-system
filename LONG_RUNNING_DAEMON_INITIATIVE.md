@@ -129,16 +129,16 @@ daemon_main
 
 **Phase 1 Tasks:**
 
-- [ ] Analyze current `polling-reporter.sh` spawn logic
-- [ ] Create `polling-reporter-daemon.sh` with `while true` loop
-- [ ] Replace `sessions_spawn` calls with direct bash functions
-- [ ] Implement status file output (JSON format)
-- [ ] Add signal handling for graceful shutdown
-- [ ] Create `polling-reporter-controller.sh` (start/stop/status)
-- [ ] Test daemon startup and shutdown
-- [ ] Verify status file updates correctly
-- [ ] Monitor API call reduction
-- [ ] Update documentation
+- [x] Analyze current `polling-reporter.sh` spawn logic
+- [x] Create `polling-reporter-daemon.sh` with `while true` loop
+- [x] Replace `sessions_spawn` calls with direct bash functions
+- [x] Implement status file output (JSON format)
+- [x] Add signal handling for graceful shutdown
+- [x] Create `polling-reporter-controller.sh` (start/stop/status)
+- [x] Test daemon startup and shutdown
+- [x] Verify status file updates correctly
+- [x] Monitor API call reduction
+- [x] Update documentation
 
 **Estimated effort:** 2-3 hours  
 **Risk:** Low (read-only monitoring)
