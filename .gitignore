@@ -1,0 +1,32 @@
+# Dependencies
+node_modules/
+.venv/
+embeddings_env/
+oauth_env/
+
+# Runtime state
+*.log
+.memory-capture-state*.json
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Large binary files
+*.mp4
+*.mp3
+*.wav
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.webp
+
+# Session data (too large)
+logs/*.jsonl
+logs/current/
+checkpoints/*/session.jsonl
