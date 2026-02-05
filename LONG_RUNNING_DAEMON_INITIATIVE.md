@@ -45,11 +45,25 @@ Work → Die         Process
 
 ## Systems to Convert
 
-- [ ] **Priority 1: Polling Reporter** — Spawn per check → Long-running with schedule
-- [ ] **Priority 2: Background Indexer** — Cron + spawn → File watcher daemon
+- [x] **Priority 1: Polling Reporter** — Spawn per check → Long-running with schedule
+- [ ] **Priority 2: Background Indexer** — Batched spawn → One long-running Franklin
 - [ ] **Priority 3: Consciousness Layers** — 8 separate spawns → 1 orchestrator daemon
 - [ ] **Priority 4: Heartbeat Checks** — Spawn per check → Long-running with timer
 - [ ] **Priority 5: Rate Limit Manager** — Already daemon? → Verify/optimize if needed
+
+### Phase 2: Background Indexer Conversion
+
+**Current:** 288 spawns/day (one per batch)  
+**Target:** 1 spawn total (long-running Franklin with queue)
+
+**Phase 2 Tasks:**
+
+- [x] Create `memory-judge-indexer.sh` (long-running Franklin daemon)
+- [x] Modify `background-indexer-v2.sh` to write chunks to queue (no spawn)
+- [x] Implement file-based IPC between indexer and judge
+- [x] Test end-to-end: chunk → queue → judgment → embedding
+- [x] Monitor spawn reduction (288/day → 1)
+- [x] Update documentation
 
 ---
 
